@@ -2,11 +2,11 @@ require 'passenger'
 
 describe Passenger  do
 
-	let(:passenger)	                   	    { Passenger.new(:waterloo, 2)      }
-	let(:passenger_without_enough_money)		{ Passenger.new(:waterloo)         }
-	let(:money)											        {       double :money              } 
-  let(:train)										  	      { 			double :train              }
-	let(:station)                           {       double :station            }
+	let(:passenger)	                   	                     { Passenger.new(:waterloo, 2)      }
+	let(:passenger_without_enough_money)		             { Passenger.new(:waterloo)         }
+	let(:money)	                                             {       double :money              } 
+        let(:train)				                     {       double :train              }
+	let(:station)                                                {       double :station            }
 
 
 	it 'must have at least £ 2 to travel' do

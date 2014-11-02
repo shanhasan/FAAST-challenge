@@ -1,6 +1,6 @@
-The FAAST system challenge
+#*The FAAST system challenge*
 
-The FAAST system will cater for the following:
+##The FAAST system will cater for the following:
 
 There will be a number of trains inside the system.
 Trains will travel from station to station.

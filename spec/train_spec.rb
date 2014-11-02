@@ -2,8 +2,8 @@ require 'train'
 
 describe Train do 
      let(:tube)                            {     Train.new     }
-     let(:passenger)												{ double :passenger }
-     let(:station)                          {  double :station  }
+     let(:passenger)                       { double :passenger }
+     let(:station)                         {  double :station  }
 
 it 'is empty when created' do
 	expect(tube).not_to have_passengers

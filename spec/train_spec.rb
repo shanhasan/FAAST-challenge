@@ -1,9 +1,15 @@
 require 'train'
 
 describe Train do 
+<<<<<<< HEAD
      let(:tube)                             {     Train.new     }
      let(:passenger)												{ double :passenger }
      let(:station)                          {  double :station  }
+=======
+     let(:tube)                            {     Train.new     }
+     let(:passenger)                       { double :passenger }
+     let(:station)                         {  double :station  }
+>>>>>>> d13906e714c9ad6bbcf634ef7157c87a644c1389
 
 it 'is empty when created' do
 	expect(tube).not_to have_passengers

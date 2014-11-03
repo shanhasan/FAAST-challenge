@@ -5,7 +5,7 @@ describe Passenger  do
 	let(:passenger)	                   	    { Passenger.new(:waterloo, 2)      }
 	let(:passenger_without_enough_money)		{ Passenger.new(:waterloo)         }
 	let(:money)											        {       double :money              } 
-  let(:train)										  	      { 			double :train              }
+  let(:train)										  	      { 			double :train             }
 	let(:station)                           {       double :station            }
 
 
@@ -33,19 +33,17 @@ describe Passenger  do
 		expect(passenger.change_destination(:new_destination)).to be (:new_destination)
 	end
 
-	# it 'will alight once at destination' do
 
-	# end
-
-
-	# it 'will transit in the station before touching' do
+context 'once at destination' do
+	
+ 	# it 'will transit in the station before touching' do
 
 	# end
 
 	# it 'will touch at the destination of the journey' do
 
 	# end
-
+end
 	
 
 	

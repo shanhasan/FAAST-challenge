@@ -2,6 +2,10 @@ class Station
 
 attr_accessor :location, :station
 
+
+# I NEED TO INCLUDE THE DEFAULT CAPACITY
+
+
 	def initialize(station = [], location = 'Station')
 		@station = station
 		@location = location
@@ -22,4 +26,3 @@ attr_accessor :location, :station
 end
 
 
-# I NEED TO INCLUDE THE DEFAULT CAPACITY

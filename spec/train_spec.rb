@@ -1,7 +1,7 @@
 require 'train'
 
 describe Train do 
-     let(:tube)                            {     Train.new     }
+     let(:tube)                             {     Train.new     }
      let(:passenger)												{ double :passenger }
      let(:station)                          {  double :station  }
 

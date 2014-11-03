@@ -23,5 +23,11 @@ class Passenger
  		@destination = new_destination
  	end
 
+ 	def right_station?
+ 		  self.origin == train.actual_location(station)
+ 	end
+
+
+
 
 end

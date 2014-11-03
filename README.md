@@ -14,4 +14,6 @@
 
 - Each train is made of a number of coaches.
 
-- The _minum amount_ of credit that a passenger must have t*o touch at the station is £ 2
+- The _minum amount_ of credit that a passenger must have to touch at the station is £ 2
+
+[https://github.com/rspec/rspec ]

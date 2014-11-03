@@ -1,0 +1,5 @@
+class Carriage
+
+
+
+end

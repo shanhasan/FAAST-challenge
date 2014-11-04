@@ -2,20 +2,25 @@ require 'carriage'
 
 describe Carriage do
 
-let(:carriage)  {  Carriage.new } 
+DEFAULT_CAPACITY = 40
+let(:carriage)                        {    Carriage.new     } 
+let(:passenger)                       {  double :passenger  }
 
 it 'is not full when created' do
 	expect(carriage).to be_empty
 end
 
-# it 'has a default capacity when created' do
-# 	expect(carriage).to_have_capacity
-# end
+it 'has a default capacity when created' do
+	expect(carriage.capacity).to eq(DEFAULT_CAPACITY)
+end
 
-it 'has a default capacity that cannot be exceeded'
+it 'has a default capacity that cannot be exceeded' do
+	expect(carriage).not_to be_full
 
 
-it 'is part of the train'
+end
+
+
 
 
 

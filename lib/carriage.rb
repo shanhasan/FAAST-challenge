@@ -1,18 +1,22 @@
 class Carriage
 
-	attr_accessor :coach
+	attr_accessor :coach, :capacity
 
-	def initialize
+	DEFAULT_CAPACITY = 40
+
+	def initialize(capacity = DEFAULT_CAPACITY)
 		@coach = []
+		@capacity = capacity
 	end
 
 	def empty?
 		@coach.empty?
 	end
 
-	# def to_have_capacity
+	def full?
 
-	# end
+	end
+
 
 
 end

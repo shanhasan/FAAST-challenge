@@ -14,7 +14,7 @@ class Carriage
 	end
 
 	def full?
-
+		@capacity == DEFAULT_CAPACITY
 	end
 
 

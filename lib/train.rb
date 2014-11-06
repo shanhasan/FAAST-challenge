@@ -9,7 +9,7 @@ attr_accessor :itinerary, :location, :in_transit, :carriages
 	end
 
 	def add_carriage(carriage)
-		@carriages << carriage
+			@carriages << carriage if @carriages.size < 3
 	end
 
 	def has_passengers?
@@ -44,16 +44,14 @@ attr_accessor :itinerary, :location, :in_transit, :carriages
 			end
 	end
 
-	# def board(passenger,carriage)
-	# 	carriage << passenger if passenger_destination_in_itinerary?(passenger)
-	# end
+	def board(passenger)
+		board_where
+		carriage << passenger if passenger_destination_in_itinerary?(passenger)
+	end
 
 	# def number_of_passengers
 	# 	carriages.map{ |carriage| carriage.carriage.size }
 	# end
-
-
-
 
 	# def alight_here
 	# 	#this part need to be implemented with a Proc and refactored

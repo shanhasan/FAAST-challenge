@@ -14,22 +14,18 @@ attr_accessor :itinerary, :location, :in_transit, :carriage
 
 	def has_passengers?
 		@carriages.each do |carriage|
-			return true	if carriage.has_passengers?
+		return true if carriage.has_passengers?
 		end
-			false
+		false
 	end
-
 
 	def full?
-			@carriages.each do |carriage|
-			return false	if !carriage.full?
+		@carriages.each do |carriage|
+		return false if !carriage.full?
 		end
-			true
+		true
 	end
-
-
-
-
+	
 	def add_station_to_itinerary(station)
 		@itinerary << station
 	end
@@ -39,14 +35,10 @@ attr_accessor :itinerary, :location, :in_transit, :carriage
 	end
 
 	def is_boarding_possible_on_this_carriage?
-			@carriges.each do |carriage|
-				return carriage if !carriage.full?
-			end
+		@carriages.each do |carriage|
+		return carriage if !carriage.full?
+		end
 	end
-			
-
-
-
 
 	def board(passenger,carriage)
 		carriage << passenger if passenger_destination_in_itinerary?(passenger)

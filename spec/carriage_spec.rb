@@ -7,7 +7,7 @@ let(:carriage)                        {    Carriage.new     }
 let(:passenger)                       {  double :passenger  }
 
 it 'is not full when created' do
-	expect(carriage).to be_empty
+	expect(carriage).not_to have_passengers
 end
 
 it 'has a default capacity when created' do
@@ -16,15 +16,7 @@ end
 
 it 'has a default capacity that cannot be exceeded' do
 	expect(carriage).not_to be_full
-
-
 end
-
-
-
-
-
-
 
 
 

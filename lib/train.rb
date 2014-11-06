@@ -1,6 +1,6 @@
 class Train
 
-attr_accessor :itinerary, :location, :in_transit, :carriage
+attr_accessor :itinerary, :location, :in_transit, :carriages
 
 	def initialize(carriages = [])
 		@carriages = carriages
@@ -19,16 +19,12 @@ attr_accessor :itinerary, :location, :in_transit, :carriage
 			false
 	end
 
-
 	def full?
-			@carriages.each do |carriage|
-			return false	if !carriage.full?
+		@carriages.each do |carriage|
+			return true	if carriage.full?
 		end
-			true
+			false
 	end
-
-
-
 
 	def add_station_to_itinerary(station)
 		@itinerary << station
@@ -38,33 +34,31 @@ attr_accessor :itinerary, :location, :in_transit, :carriage
 		@itinerary.include?(passenger.destination)
 	end
 
-	def is_boarding_possible_on_this_carriage?
-			@carriges.each do |carriage|
-				return carriage if !carriage.full?
-			end
-	end
-			
-
-
-
-
-	def board(passenger,carriage)
-		carriage << passenger if passenger_destination_in_itinerary?(passenger)
-	end
-
-	def number_of_passengers
-		
-	end
-
 	def actual_location(station)
 		@location = station
 	end
 
-	def alight_here
-		#this part need to be implemented with a Proc and refactored
-		@in_transit = @train.select{|passenger| passenger.destination == @location}
-		@train.delete_if{ |passenger| passenger.destination == @location }
+	def board_where
+			@carriages.each do |carriage|
+				return carriage if !carriage.full?
+			end
 	end
+			
+	# def board(passenger,carriage)
+	# 	carriage << passenger if passenger_destination_in_itinerary?(passenger)
+	# end
+
+	# def number_of_passengers
+	# 	carriages.map{ |carriage| carriage.carriage.size }
+	# end
+
+
+
+	# def alight_here
+	# 	#this part need to be implemented with a Proc and refactored
+	# 	@in_transit = @train.select{|passenger| passenger.destination == @location}
+	# 	@train.delete_if{ |passenger| passenger.destination == @location }
+	# end
 
 
 end

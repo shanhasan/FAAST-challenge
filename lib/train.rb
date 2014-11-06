@@ -14,9 +14,9 @@ attr_accessor :itinerary, :location, :in_transit, :carriages
 
 	def has_passengers?
 		@carriages.each do |carriage|
-			return true	if carriage.has_passengers?
+		return true if carriage.has_passengers?
 		end
-			false
+		false
 	end
 
 	def full?
@@ -25,7 +25,7 @@ attr_accessor :itinerary, :location, :in_transit, :carriages
 		end
 			false
 	end
-
+	
 	def add_station_to_itinerary(station)
 		@itinerary << station
 	end
@@ -43,7 +43,7 @@ attr_accessor :itinerary, :location, :in_transit, :carriages
 				return carriage if !carriage.full?
 			end
 	end
-			
+
 	# def board(passenger,carriage)
 	# 	carriage << passenger if passenger_destination_in_itinerary?(passenger)
 	# end
@@ -51,6 +51,7 @@ attr_accessor :itinerary, :location, :in_transit, :carriages
 	# def number_of_passengers
 	# 	carriages.map{ |carriage| carriage.carriage.size }
 	# end
+
 
 
 

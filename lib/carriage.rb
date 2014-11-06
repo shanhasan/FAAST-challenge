@@ -1,21 +1,31 @@
 class Carriage
 
-	attr_accessor :coach, :capacity
+	attr_accessor :carriage, :capacity
 
 	DEFAULT_CAPACITY = 40
 
 	def initialize(capacity = DEFAULT_CAPACITY)
-		@coach = []
+		@carriage = []
 		@capacity = capacity
 	end
 
-	def empty?
-		@coach.empty?
+	def has_passengers?
+		!@carriage.empty?
 	end
 
 	def full?
-		@capacity == DEFAULT_CAPACITY
+		@carriage.size == @capacity
 	end
+
+	def passengers_number
+		@carriage.size
+	end
+
+	def board(passenger)
+		@carriage << passenger
+	end
+
+
 
 
 

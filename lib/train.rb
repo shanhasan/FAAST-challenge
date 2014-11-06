@@ -1,16 +1,34 @@
 class Train
 
-attr_accessor :itinerary, :train, :location, :in_transit
+attr_accessor :itinerary, :location, :in_transit, :carriage
 
-	def initialize(train = [])
-		@train = train
+	def initialize(carriages = [])
+		@carriages = carriages
 		@itinerary = []
 		@in_transit = [] 
 	end
 
-	def has_passengers?
-		!@train.empty?
+	def add_carriage(carriage)
+		@carriages << carriage
 	end
+
+	def has_passengers?
+		@carriages.each do |carriage|
+			return true	if carriage.has_passengers?
+		end
+			false
+	end
+
+
+	def full?
+			@carriages.each do |carriage|
+			return false	if !carriage.full?
+		end
+			true
+	end
+
+
+
 
 	def add_station_to_itinerary(station)
 		@itinerary << station
@@ -20,12 +38,22 @@ attr_accessor :itinerary, :train, :location, :in_transit
 		@itinerary.include?(passenger.destination)
 	end
 
-	def board(passenger)
-		@train << passenger if passenger_destination_in_itinerary?(passenger)
+	def is_boarding_possible_on_this_carriage?
+			@carriges.each do |carriage|
+				return carriage if !carriage.full?
+			end
+	end
+			
+
+
+
+
+	def board(passenger,carriage)
+		carriage << passenger if passenger_destination_in_itinerary?(passenger)
 	end
 
 	def number_of_passengers
-		@train.size
+		
 	end
 
 	def actual_location(station)

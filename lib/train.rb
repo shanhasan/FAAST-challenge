@@ -39,9 +39,7 @@ attr_accessor :itinerary, :location, :in_transit, :carriages
 	end
 
 	def board_where
-		@carriages.each do |carriage|
-			return carriage if !carriage.full?
-		end
+		@carriages.reject(&:full?).first
 	end
 
 	def board(passenger)

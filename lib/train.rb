@@ -15,7 +15,7 @@ attr_accessor :itinerary, :location, :in_transit, :carriages
 	def has_passengers?
 		@carriages.each do |carriage|
 		return true if carriage.has_passengers?
-		end
+	end
 		false
 	end
 
@@ -39,14 +39,13 @@ attr_accessor :itinerary, :location, :in_transit, :carriages
 	end
 
 	def board_where
-			@carriages.each do |carriage|
-				return carriage if !carriage.full?
-			end
+		@carriages.each do |carriage|
+			return carriage if !carriage.full?
+		end
 	end
 
 	def board(passenger)
-		board_where
-		carriage << passenger if passenger_destination_in_itinerary?(passenger)
+		self.board_where.push(passenger) if passenger_destination_in_itinerary?(passenger)
 	end
 
 	# def number_of_passengers

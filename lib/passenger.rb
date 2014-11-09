@@ -16,7 +16,6 @@ class Passenger
 	end
 
  	def touch_at_the_origin_station
- 		#should this take away money and regester them as inside the station
  		has_enough_money?
  	end
 

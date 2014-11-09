@@ -19,6 +19,12 @@ attr_accessor :location, :station
 		@station << passenger if passenger.has_enough_money?
 	end
 
+	def passenger_in_the_station(train)
+		@station << train.in_transit
+	end
+
+
+
 end
 
 

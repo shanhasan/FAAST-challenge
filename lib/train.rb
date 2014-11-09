@@ -9,11 +9,11 @@ attr_accessor :itinerary, :location, :in_transit, :carriages
 	end
 
 	def add_carriage(carriage)
-			@carriages << carriage if @carriages.size < 3
+		@carriages << carriage if @carriages.size < 3
 	end
 
 	def has_passengers?
-			@carriages.any?(&:has_passengers?)
+		@carriages.any?(&:has_passengers?)
 	end
 
 	def full?

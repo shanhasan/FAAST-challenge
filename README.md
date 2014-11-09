@@ -19,5 +19,5 @@
 ###SKILLS
 
 - Ruby
-- Rspec: https://github.com/rspec/rspec
+- [Rspec](https://github.com/rspec/rspec)
 

@@ -24,11 +24,16 @@ class Passenger
  	end
 
  	def right_station?
- 		  self.origin == train.actual_location(station)
+ 		 self.origin == train.actual_location(station)
  	end
 
- 	def touch_at_the_destination_station
+ 	def in_transit(station)
+ 		station << self
+ 	end
 
+ 	def touch_at_the_destination(station)
+ 		in_transit(station)
+ 		station.delete_if{ |station| station.location == destination}
  	end
 
 

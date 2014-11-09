@@ -35,7 +35,6 @@ it 'allows transit in the station once off the train' do
 	expect(tube).to receive(:in_transit)
 	station.passenger_in_the_station(tube)
 	expect(station.station.count).to be(2)
-	#one passenger in transit and one in the station
 end
 
 

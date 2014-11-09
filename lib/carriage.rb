@@ -10,22 +10,19 @@ class Carriage
 	end
 
 	def has_passengers?
-		!@carriage.empty?
+		!carriage.empty?
 	end
 
 	def full?
-		@carriage.size == @capacity
+		carriage.size == @capacity
 	end
 
 	def passengers_number
-		@carriage.size
+		carriage.size
 	end
 
 	def board(passenger)
-		@carriage << passenger
+		carriage << passenger
 	end
-
-
-
 
 end

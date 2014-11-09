@@ -13,17 +13,11 @@ attr_accessor :itinerary, :location, :in_transit, :carriages
 	end
 
 	def has_passengers?
-		@carriages.each do |carriage|
-		return true if carriage.has_passengers?
-	end
-		false
+			@carriages.any?(&:has_passengers?)
 	end
 
 	def full?
-		@carriages.each do |carriage|
-			return true	if carriage.full?
-		end
-			false
+		@carriages.all?(&:full?)
 	end
 	
 	def add_station_to_itinerary(station)
@@ -46,15 +40,15 @@ attr_accessor :itinerary, :location, :in_transit, :carriages
 		self.board_where.push(passenger) if passenger_destination_in_itinerary?(passenger)
 	end
 
-	# def number_of_passengers
-	# 	carriages.map{ |carriage| carriage.carriage.size }
-	# end
+	def passengers_to_depart
+		@carriages.select(&:has_passengers?).map(&:carriage).flatten.select do |passenger| 
+			passenger.destination == location
+		end
+	end
 
-	# def alight_here
-	# 	#this part need to be implemented with a Proc and refactored
-	# 	@in_transit = @train.select{|passenger| passenger.destination == @location}
-	# 	@train.delete_if{ |passenger| passenger.destination == @location }
-	# end
-
+	def alight_here
+		@in_transit = passengers_to_depart
+		@carriages.delete_if{ |passenger| in_transit.include?(passenger) }	
+	end
 
 end

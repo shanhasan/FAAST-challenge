@@ -5,7 +5,6 @@ describe Station do
 	let(:station)                    {    Station.new    }
 	let(:passenger)                  { double :passenger }
 
-# I NEED TO INCLUDE THE DEFAULT CAPACITY
 
 it 'is empty when built' do 
 	expect(station).not_to have_passengers

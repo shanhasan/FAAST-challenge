@@ -19,7 +19,4 @@ it 'has a default capacity that cannot be exceeded' do
 end
 
 
-
-
-
 end

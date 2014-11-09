@@ -9,32 +9,40 @@ describe Passenger  do
   let(:train)										  	      { 			double :train              }
 	let(:station)                           {       double :station            }
 
-	it 'must have at least £ 2 to travel' do
-		expect(passenger).to have_enough_money
+	
+	context 'passenger attributes' do
+
+		it 'must have at least £ 2 to travel' do
+			expect(passenger).to have_enough_money
+		end
+
+		it 'has a origin' do 
+			expect(passenger.origin).not_to be nil
+		end
+
+		it 'has a destination' do
+			expect(passenger.destination).not_to be nil
+		end
+
 	end
 
-	it 'has a origin' do 
-		expect(passenger.origin).not_to be nil
+	context 'in the station before boarding' do
+
+		it 'will touch at the origin of the journey' do
+			expect(passenger).to have_enough_money
+			expect(passenger.origin).not_to be nil
+			passenger.touch_at_the_origin_station
+			expect(passenger.touch_at_the_origin_station).to be true
+		end
+
+		it 'can change the destination' do
+			expect(passenger.destination).not_to be nil
+			expect(passenger.change_destination(:new_destination)).to be (:new_destination)
+		end
+
 	end
 
-	it 'has a destination' do
-		expect(passenger.destination).not_to be nil
-	end
-
-	it 'will touch at the origin of the journey' do
-		expect(passenger).to have_enough_money
-		expect(passenger.origin).not_to be nil
-		passenger.touch_at_the_origin_station
-		expect(passenger.touch_at_the_origin_station).to be true
-	end
-
-	it 'can change the destination' do
-		expect(passenger.destination).not_to be nil
-		expect(passenger.change_destination(:new_destination)).to be (:new_destination)
-	end
-
-
-context 'once at destination' do
+context 'once board and once at destination' do
 	
  	# it 'will transit in the station before touching' do
 

@@ -11,4 +11,4 @@ require './passenger'
 @tube.add_station_to_itinerary('waterloo')
 @tube.add_station_to_itinerary('charing cross')
 
-@tube.board(@giorgia)
+@tube.actual_location('southwark')

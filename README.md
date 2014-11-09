@@ -1,4 +1,4 @@
-#**The FAAST system challenge**
+#**The FAAST system challenge** :tram:
 
 ##The FAAST system will cater for the following:
 
@@ -18,5 +18,3 @@
 
 [https://github.com/rspec/rspec ]
 
-:uk:
-:tram:

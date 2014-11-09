@@ -1,4 +1,4 @@
-sclass Train
+class Train
 
 attr_accessor :itinerary, :location, :in_transit, :carriages
 

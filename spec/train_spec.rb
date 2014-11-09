@@ -96,8 +96,8 @@ context 'train interacts with passengers' do
 		tube.location = "Old Street"
 		expect(tube.passengers_to_depart).to eq [passenger]
 		tube.alight_here
-		expect(tube.carriages).to eq([])
-		
+		# allow(tube).to receive(:delete_if)
+		expect(tube.in_transit).to eq([passenger])
 	end
 
 end

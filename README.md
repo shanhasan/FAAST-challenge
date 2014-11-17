@@ -1,5 +1,10 @@
 #**The FAAST system challenge** :tram:
 
+<div>
+<img src = http://img.shields.io/badge/ruby-master-red.svg >
+<img src = http://img.shields.io/badge/RSPEC-TDD-blue.svg >
+</div>
+
 ##The FAAST system will cater for the following:
 
 - There will be a number of trains inside the system.
